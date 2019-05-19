@@ -1,0 +1,48 @@
+{
+    "name": "widgets-bootstrap",
+    "version": "0.1.0",
+    "scripts": {
+        "dev": "dojo build --mode dev --watch file --serve",
+        "build": "dojo build --mode dist",
+        "build:dev": "dojo build --mode dev",
+        "test": "dojo test",
+        "test:unit": "dojo build --mode unit && dojo test --unit --config local",
+        "test:functional": "dojo build --mode functional && dojo test --functional --config local",
+        "test:all": "dojo build --mode unit && dojo build --mode functional && dojo test --all --config local",
+        "precommit": "lint-staged",
+        "prettier": "prettier --write 'src/**/*.ts' 'src/**/*.css' 'tests/**/*.ts'"
+    },
+    "dependencies": {
+        "@dojo/framework": "^5.0.0",
+        "@dojo/themes": "^5.0.0",
+        "@dojo/widgets": "^5.0.0",
+        "tslib": "~1.9.3",
+        "bootstrap": "^4.3.1",
+        "jquery": "^3.4.1",
+        "@types/jquery": "^3.3.29",
+        "popper.js": "^1.15.0"
+    },
+    "devDependencies": {
+        "@dojo/cli": "^5.0.0",
+        "@dojo/cli-build-app": "^5.0.0",
+        "@dojo/cli-test-intern": "^5.0.0",
+        "@types/node": "~9.6.5",
+        "typescript": "~3.2.4",
+        "husky": "2.3.0",
+        "lint-staged": "8.1.7",
+        "prettier": "1.17.1"
+    },
+    "lint-staged": {
+        "*.{ts,tsx,css}": [
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "prettier": {
+        "singleQuote": true,
+        "tabWidth": 4,
+        "useTabs": true,
+        "printWidth": 120,
+        "arrowParens": "always"
+    }
+}
