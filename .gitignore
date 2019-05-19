@@ -2,3 +2,7 @@ node_modules/
 _build/
 output/
 .cert/
+
+# eclipse
+.project
+.settings/
