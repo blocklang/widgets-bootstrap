@@ -1,3 +1,125 @@
 {
-    
+    "name": "TextInput",
+    "label": "文本输入框",
+    "iconClass": "",
+    "properties": [
+        {
+            "name": "name",
+            "label": "名称",
+            "value": "",
+            "valueType": "string"
+        },
+        {
+            "name": "type",
+            "label": "类型",
+            "value": "text",
+            "valueType": "string",
+            "options": [
+                {
+                    "value": "text",
+                    "label": "文本"
+                },
+                {
+                    "value": "password",
+                    "label": "密码"
+                },
+                {
+                    "value": "email",
+                    "label": "邮箱"
+                },
+                {
+                    "value": "number",
+                    "label": "数值"
+                }
+            ]
+        },
+        {
+            "name": "value",
+            "label": "值",
+            "value": "",
+            "valueType": "string"
+        },
+        {
+            "name": "placeholder",
+            "label": "输入提示",
+            "value": "",
+            "valueType": "string"
+        },
+        {
+            "name": "size",
+            "label": "尺寸",
+            "value": "",
+            "valueType": "string",
+            "options": [
+                {
+                    "value": "small",
+                    "label": "小"
+                },
+                {
+                    "value": "large",
+                    "label": "大"
+                }
+            ]
+        },
+        {
+            "name": "shouldFocus",
+            "label": "获取焦点",
+            "value": false,
+            "valueType": "boolean"
+        }
+    ],
+    "events": [
+        {
+            "name": "onInput",
+            "label": "输入",
+            "valueType": "function",
+            "arguments": [
+                {
+                    "name": "value",
+                    "label": "值",
+                    "value": "",
+                    "valueType": "string"
+                }
+            ]
+        },
+        {
+            "name": "onChange",
+            "label": "点击",
+            "valueType": "function",
+            "arguments": [
+                {
+                    "name": "value",
+                    "label": "值",
+                    "value": "",
+                    "valueType": "string"
+                }
+            ]
+        },
+        {
+            "name": "onFocus",
+            "label": "获得焦点",
+            "valueType": "function",
+            "arguments": [
+                {
+                    "name": "value",
+                    "label": "值",
+                    "value": "",
+                    "valueType": "string"
+                }
+            ]
+        },
+        {
+            "name": "onBlur",
+            "label": "失去焦点",
+            "valueType": "function",
+            "arguments": [
+                {
+                    "name": "value",
+                    "label": "值",
+                    "value": "",
+                    "valueType": "string"
+                }
+            ]
+        }
+    ]
 }
