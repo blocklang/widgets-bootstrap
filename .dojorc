@@ -1,7 +1,9 @@
 {
     "build-widget": {
         "elements": [
-            "src/widgets/text-input"
+            "src/widgets/text-input",
+            "src/widgets/text-input/designer",
+            "src/widgets/text-input/demo"
         ]
     }
 }
