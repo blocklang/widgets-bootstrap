@@ -1,0 +1,7 @@
+{
+    "build-widget": {
+        "elements": [
+            "src/widgets/text-input"
+        ]
+    }
+}
