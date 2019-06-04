@@ -4,5 +4,8 @@
     "displayName": "Bootstrap Widgets",
     "description": "基于 bootstrap 和 dojo 的 UI 部件库",
     "category": "Widget",
-    "language": "Typescript"
+    "language": "Typescript",
+    "widgets": [
+        "src/widgets/text-input"
+    ]
 }
