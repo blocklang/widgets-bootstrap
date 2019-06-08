@@ -5,7 +5,11 @@
     "description": "基于 bootstrap 和 dojo 的 UI 部件库",
     "category": "Widget",
     "language": "Typescript",
-    "widgets": [
+    "components": [
         "src/widgets/text-input"
-    ]
+    ],
+    "api": {
+        "git": "https://github.com/blocklang/api-widgets-bootstrap.git",
+        "version": "0.1.0"
+    }
 }
