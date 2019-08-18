@@ -1,6 +1,6 @@
 {
     "name": "widgets-bootstrap",
-    "version": "0.1.0",
+    "version": "0.1.4",
     "displayName": "Bootstrap Widgets",
     "description": "基于 bootstrap 和 dojo 的 UI 部件库",
     "category": "Widget",
@@ -10,7 +10,7 @@
     ],
     "api": {
         "git": "https://github.com/blocklang/api-widgets-bootstrap.git",
-        "version": "0.1.1"
+        "version": "0.1.2"
     },
     "appType": "web"
 }
