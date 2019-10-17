@@ -2,6 +2,7 @@ node_modules/
 _build/
 output/
 .cert/
+dist/
 
 # eclipse
 .project

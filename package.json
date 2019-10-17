@@ -1,15 +1,15 @@
 {
     "name": "widgets-bootstrap",
-    "version": "0.0.1-alpha.1",
+    "version": "0.0.1-alpha.2",
     "repository": {
         "type": "git",
         "url": "https://github.com/blocklang/widgets-bootstrap.git"
     },
     "scripts": {
-        "dev": "dojo build --mode dev --watch file --serve",
-        "build": "dojo build --mode dist",
-        "build:dev": "dojo build --mode dev",
-        "build:widget": "dojo build widget --mode dist --target lib",
+        "build:lib": "dojo build widget --mode dist --target lib && shx cp -r output/dist/* dist/",
+        "build:lib:legacy": "dojo build widget --mode dist --target lib -l && shx cp -r output/dist/* dist/",
+        "clean": "shx rm -rf dist && shx mkdir dist",
+        "build": "npm run clean && npm run build:lib && npm run build:lib:legacy && shx cp package.json dist/ && shx cp README.md dist/",
         "test": "dojo test",
         "test:unit": "dojo build --mode unit && dojo test --unit --config local",
         "test:functional": "dojo build --mode functional && dojo test --functional --config local",
@@ -24,7 +24,8 @@
         "bootstrap": "^4.3.1",
         "jquery": "^3.4.1",
         "popper.js": "^1.15.0",
-        "tslib": "~1.9.3"
+        "tslib": "~1.9.3",
+        "bootstrap-classes": "~0.0.2"
     },
     "devDependencies": {
         "@dojo/cli": "^6.0.0",
@@ -34,7 +35,8 @@
         "husky": "^3.0.8",
         "lint-staged": "^9.4.2",
         "prettier": "^1.18.2",
-        "typescript": "~3.4.5"
+        "typescript": "~3.4.5",
+        "shx": "^0.3.2"
     },
     "lint-staged": {
         "*.{ts,tsx,css}": [
