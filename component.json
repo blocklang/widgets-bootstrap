@@ -10,7 +10,7 @@
     ],
     "api": {
         "git": "https://github.com/blocklang/api-widgets-bootstrap.git",
-        "version": "0.1.2"
+        "version": "0.1.3"
     },
     "appType": "web"
 }
