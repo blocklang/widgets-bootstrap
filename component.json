@@ -1,6 +1,6 @@
 {
     "name": "widgets-bootstrap",
-    "version": "0.1.4",
+    "version": "0.1.6",
     "displayName": "Bootstrap Widgets",
     "description": "基于 bootstrap 和 dojo 的 UI 部件库",
     "category": "Widget",
