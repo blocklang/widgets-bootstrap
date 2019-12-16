@@ -5,6 +5,8 @@ import * as c from "bootstrap-classes";
 
 export interface TextInputProperties {
 	value?: string;
+	type?: string;
+	shouldFocus?: boolean;
 	onValue?(value?: string): void;
 }
 
