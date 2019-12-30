@@ -1,7 +1,8 @@
 {
     "build-widget": {
         "widgets": [
-            "src/text-input"
+            "src/text-input",
+            "src/plain-text"
         ]
     }
 }
