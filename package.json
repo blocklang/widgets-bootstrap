@@ -1,6 +1,6 @@
 {
     "name": "widgets-bootstrap",
-    "version": "0.1.6",
+    "version": "0.1.7-alpha.1",
     "repository": {
         "type": "git",
         "url": "https://github.com/blocklang/widgets-bootstrap.git"
@@ -10,17 +10,18 @@
         "build:lib:legacy": "dojo build widget --mode dist --target lib -l && shx cp -r output/dist/* dist/",
         "clean": "shx rm -rf dist && shx mkdir dist",
         "build": "npm run clean && npm run build:lib && npm run build:lib:legacy && shx cp package.json dist/ && shx cp README.md dist/",
+        "dev": "dojo build --mode dev --watch --serve",
         "test": "dojo test",
         "test:unit": "dojo build --mode unit && dojo test --unit --config local",
         "test:functional": "dojo build --mode functional && dojo test --functional --config local",
         "test:all": "dojo build --mode unit && dojo build --mode functional && dojo test --all --config local",
-        "precommit": "lint-staged",
         "prettier": "prettier --write 'src/**/*.{ts,tsx}' 'src/**/*.css' 'tests/**/*.{ts,tsx}'"
     },
     "dependencies": {
         "@dojo/framework": "^6.0.3",
         "@dojo/themes": "^6.0.0",
         "@types/jquery": "^3.3.31",
+        "@types/bootstrap": "4.1.0",
         "bootstrap": "^4.4.1",
         "bootstrap-classes": "~0.0.2",
         "jquery": "^3.4.1",
@@ -30,6 +31,7 @@
     "devDependencies": {
         "@dojo/cli": "^6.0.0",
         "@dojo/cli-build-widget": "^6.0.1",
+        "@dojo/cli-build-app": "^6.0.9",
         "@dojo/cli-test-intern": "^6.0.0",
         "@types/node": "^9.6.55",
         "husky": "^3.1.0",
@@ -37,6 +39,11 @@
         "prettier": "^1.19.1",
         "shx": "^0.3.2",
         "typescript": "~3.4.5"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
     },
     "lint-staged": {
         "*.{ts,tsx,css}": [
