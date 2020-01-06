@@ -21,7 +21,8 @@ export default class TextInput extends WidgetBase<TextInputProperties> {
 				value={value}
 				oninput={(event: Event) => {
 					event.stopPropagation();
-					onValue && onValue((event.target as HTMLInputElement).value);
+					const value = (event.target as HTMLInputElement).value;
+					onValue && onValue(value);
 				}}
 			/>
 		);

@@ -36,11 +36,13 @@
         "@dojo/cli-build-app": "^6.0.9",
         "@dojo/cli-test-intern": "^6.0.0",
         "@types/node": "^9.6.55",
+        "@types/sinon": "4.3.1",
         "husky": "^3.1.0",
         "lint-staged": "^9.5.0",
         "prettier": "^1.19.1",
         "shx": "^0.3.2",
-        "typescript": "~3.4.5"
+        "typescript": "~3.4.5",
+        "sinon": "^8.0.2"
     },
     "husky": {
         "hooks": {
