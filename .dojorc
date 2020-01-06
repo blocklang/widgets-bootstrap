@@ -1,8 +1,9 @@
 {
     "build-widget": {
         "widgets": [
-            "src/text-input",
-            "src/plain-text"
+            "src/plain-text",
+            "src/page-data",
+            "src/text-input"
         ]
     }
 }

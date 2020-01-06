@@ -6,6 +6,8 @@
     "category": "Widget",
     "language": "Typescript",
     "components": [
+        "src/plain-text",
+        "src/page-data",
         "src/text-input"
     ],
     "api": {

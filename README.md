@@ -14,4 +14,6 @@
 
 ## 部件
 
-* [TextInput](./text-input/README.md)
+* [PlainText](./src/plain-text/README.md)
+* [PageData](./src/page-data/README.md)
+* [TextInput](./src/text-input/README.md)
