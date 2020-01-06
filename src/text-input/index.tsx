@@ -12,11 +12,11 @@ export interface TextInputProperties {
 
 export default class TextInput extends WidgetBase<TextInputProperties> {
 	protected render() {
-		const { value, onValue } = this.properties;
+		const { value = "", onValue } = this.properties;
 
 		return (
 			<input
-				key={this.getRootKey()}
+				key="root"
 				classes={[css.root, c.form_control]}
 				value={value}
 				oninput={(event: Event) => {
@@ -25,9 +25,5 @@ export default class TextInput extends WidgetBase<TextInputProperties> {
 				}}
 			/>
 		);
-	}
-
-	protected getRootKey(): string {
-		return "text-input";
 	}
 }

@@ -9,6 +9,6 @@ export default class PlainText extends WidgetBase<PlainTextProperties> {
 	protected render() {
 		const { value = "" } = this.properties;
 
-		return <virtual>{value}</virtual>;
+		return <virtual key="root">{value}</virtual>;
 	}
 }
