@@ -1,6 +1,6 @@
 {
     "name": "widgets-bootstrap",
-    "version": "0.1.7-alpha.1",
+    "version": "0.1.7-alpha.2",
     "repository": {
         "type": "git",
         "url": "https://github.com/blocklang/widgets-bootstrap.git"
@@ -22,11 +22,13 @@
         "@dojo/themes": "^6.0.0",
         "@types/jquery": "^3.3.31",
         "@types/bootstrap": "4.1.0",
+        "@types/jsonpath": "0.2.0",
         "bootstrap": "^4.4.1",
         "bootstrap-classes": "~0.0.2",
         "jquery": "^3.4.1",
         "popper.js": "^1.15.0",
-        "tslib": "~1.9.3"
+        "tslib": "~1.9.3",
+        "jsonpath": "^1.0.2"
     },
     "devDependencies": {
         "@dojo/cli": "^6.0.0",
