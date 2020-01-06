@@ -16,6 +16,6 @@ export default class PageData extends WidgetBase<PageDataProperties> {
 		}
 
 		const value = jp.value(jsonData, jsonPath) || "";
-		return <virtual>{`{${jsonPath}}: ${value}`}</virtual>;
+		return <virtual>{value}</virtual>;
 	}
 }

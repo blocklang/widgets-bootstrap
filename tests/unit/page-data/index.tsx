@@ -14,20 +14,20 @@ describe("PageData", () => {
 	it("jsonPath: not exist", () => {
 		const h = harness(() => <PageData jsonData={{}} jsonPath="$.a" />);
 
-		h.expect(() => <virtual>{`{$.a}: `}</virtual>);
+		h.expect(() => <virtual></virtual>);
 	});
 
 	it("jsonPath: $.a", () => {
 		const jsonData = { a: "hello" };
 		const h = harness(() => <PageData jsonData={jsonData} jsonPath="$.a" />);
 
-		h.expect(() => <virtual>{`{$.a}: hello`}</virtual>);
+		h.expect(() => <virtual>hello</virtual>);
 	});
 
 	it("jsonPath: $.a[0].b", () => {
 		const jsonData = { a: [{ b: "bar" }] };
 		const h = harness(() => <PageData jsonData={jsonData} jsonPath="$.a[0].b" />);
 
-		h.expect(() => <virtual>{`{$.a[0].b}: bar`}</virtual>);
+		h.expect(() => <virtual>bar</virtual>);
 	});
 });
