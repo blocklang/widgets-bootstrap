@@ -1,14 +1,12 @@
-import WidgetBase from "@dojo/framework/core/WidgetBase";
-import { tsx } from "@dojo/framework/core/vdom";
+import { create, tsx } from "@dojo/framework/core/vdom";
 
 export interface PlainTextProperties {
 	value?: string;
 }
 
-export default class PlainText extends WidgetBase<PlainTextProperties> {
-	protected render() {
-		const { value = "" } = this.properties;
+const factory = create().properties<PlainTextProperties>();
 
-		return <virtual key="root">{value}</virtual>;
-	}
-}
+export default factory(function PlainText({ properties }) {
+	const { value = "" } = properties();
+	return <virtual key="root">{value}</virtual>;
+});
