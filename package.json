@@ -32,8 +32,8 @@
     },
     "devDependencies": {
         "@dojo/cli": "^6.0.0",
-        "@dojo/cli-build-widget": "^6.0.1",
         "@dojo/cli-build-app": "^6.0.9",
+        "@dojo/cli-build-widget": "^6.0.1",
         "@dojo/cli-test-intern": "^6.0.0",
         "@types/node": "^9.6.55",
         "@types/sinon": "4.3.1",
@@ -41,8 +41,8 @@
         "lint-staged": "^9.5.0",
         "prettier": "^1.19.1",
         "shx": "^0.3.2",
-        "typescript": "~3.4.5",
-        "sinon": "^8.0.2"
+        "sinon": "^8.0.4",
+        "typescript": "~3.4.5"
     },
     "husky": {
         "hooks": {
