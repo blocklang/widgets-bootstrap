@@ -1,21 +1,18 @@
-import WidgetBase from "@dojo/framework/core/WidgetBase";
-import { tsx } from "@dojo/framework/core/vdom";
-import * as jp from "jsonpath";
+import { tsx, create } from "@dojo/framework/core/vdom";
+import { isObject } from "util";
 
 export interface PageDataProperties {
-	jsonData: any;
-	jsonPath?: string;
+	data?: any;
 }
 
-export default class PageData extends WidgetBase<PageDataProperties> {
-	protected render() {
-		const { jsonData, jsonPath = "" } = this.properties;
+const factory = create().properties<PageDataProperties>();
 
-		if (!jsonData || jsonPath.trim() === "") {
-			return <virtual></virtual>;
-		}
+export default factory(function index({ properties }) {
+	const { data } = properties();
 
-		const value = jp.value(jsonData, jsonPath) || "";
-		return <virtual>{value}</virtual>;
+	let value = data;
+	if (Array.isArray(data) || isObject(data)) {
+		value = JSON.stringify(data);
 	}
-}
+	return <virtual>{`${value ? value : ""}`}</virtual>;
+});

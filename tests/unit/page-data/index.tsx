@@ -2,32 +2,44 @@ const { describe, it } = intern.getInterface("bdd");
 
 import harness from "@dojo/framework/testing/harness";
 import { tsx } from "@dojo/framework/core/vdom";
+import assertionTemplate from "@dojo/framework/testing/assertionTemplate";
 import PageData from "../../../src/page-data";
+
+const baseAssertion = assertionTemplate(() => <virtual assertion-key="root"></virtual>);
 
 describe("PageData", () => {
 	it("default properties", () => {
-		const h = harness(() => <PageData jsonData={{}} />);
-
-		h.expect(() => <virtual></virtual>);
+		const h = harness(() => <PageData />);
+		h.expect(baseAssertion);
 	});
 
-	it("jsonPath: not exist", () => {
-		const h = harness(() => <PageData jsonData={{}} jsonPath="$.a" />);
-
-		h.expect(() => <virtual></virtual>);
+	it("data is string", () => {
+		const stringAssertion = baseAssertion.setChildren("~root", () => ["Hello"]);
+		const h = harness(() => <PageData data="Hello" />);
+		h.expect(stringAssertion);
 	});
 
-	it("jsonPath: $.a", () => {
-		const jsonData = { a: "hello" };
-		const h = harness(() => <PageData jsonData={jsonData} jsonPath="$.a" />);
-
-		h.expect(() => <virtual>hello</virtual>);
+	it("data is number", () => {
+		const numberAssertion = baseAssertion.setChildren("~root", () => ["1"]);
+		const h = harness(() => <PageData data={1} />);
+		h.expect(numberAssertion);
 	});
 
-	it("jsonPath: $.a[0].b", () => {
-		const jsonData = { a: [{ b: "bar" }] };
-		const h = harness(() => <PageData jsonData={jsonData} jsonPath="$.a[0].b" />);
+	it("data is boolean", () => {
+		const booleanAssertion = baseAssertion.setChildren("~root", () => ["true"]);
+		const h = harness(() => <PageData data={true} />);
+		h.expect(booleanAssertion);
+	});
 
-		h.expect(() => <virtual>bar</virtual>);
+	it("data is object", () => {
+		const objectAssertion = baseAssertion.setChildren("~root", () => ['{"a":"b"}']);
+		const h = harness(() => <PageData data={{ a: "b" }} />);
+		h.expect(objectAssertion);
+	});
+
+	it("data is array", () => {
+		const arrayAssertion = baseAssertion.setChildren("~root", () => ['["a"]']);
+		const h = harness(() => <PageData data={["a"]} />);
+		h.expect(arrayAssertion);
 	});
 });
