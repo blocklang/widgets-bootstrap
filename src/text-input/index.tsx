@@ -1,4 +1,3 @@
-import WidgetBase from "@dojo/framework/core/WidgetBase";
 import { create, tsx } from "@dojo/framework/core/vdom";
 import * as css from "./index.m.css";
 import * as c from "bootstrap-classes";
