@@ -15,37 +15,40 @@
         "test:unit": "dojo build --mode unit && dojo test --unit --config local",
         "test:functional": "dojo build --mode functional && dojo test --functional --config local",
         "test:all": "dojo build --mode unit && dojo build --mode functional && dojo test --all --config local",
-        "prettier": "prettier --write 'src/**/*.{ts,tsx}' 'src/**/*.css' 'tests/**/*.{ts,tsx}'"
+        "prettier": "prettier --write \"{src,tests}/**/*.{ts,tsx,css}\""
     },
     "dependencies": {
-        "@dojo/framework": "^6.0.3",
+        "@dojo/framework": "^6.0.4",
         "@dojo/themes": "^6.0.0",
-        "@types/jquery": "^3.3.31",
-        "@types/bootstrap": "4.1.0",
+        "@types/jquery": "^3.3.34",
+        "@types/bootstrap": "4.3.2",
         "@types/jsonpath": "0.2.0",
         "bootstrap": "^4.4.1",
-        "bootstrap-classes": "~0.0.2",
+        "bootstrap-classes": "~0.0.3-alpha.5",
         "jquery": "^3.4.1",
-        "popper.js": "^1.15.0",
-        "tslib": "~1.9.3",
+        "popper.js": "^1.16.1",
+        "tslib": "~1.11.1",
         "jsonpath": "^1.0.2"
     },
     "devDependencies": {
+        "@commitlint/cli": "^8.3.5",
+        "@commitlint/config-conventional": "^8.3.4",
         "@dojo/cli": "^6.0.0",
         "@dojo/cli-build-app": "^6.0.9",
-        "@dojo/cli-build-widget": "^6.0.1",
-        "@dojo/cli-test-intern": "^6.0.0",
+        "@dojo/cli-build-widget": "^6.0.2",
+        "@dojo/cli-test-intern": "^6.0.1",
         "@types/node": "^9.6.55",
-        "@types/sinon": "4.3.1",
-        "husky": "^3.1.0",
-        "lint-staged": "^9.5.0",
-        "prettier": "^1.19.1",
+        "@types/sinon": "9.0.0",
+        "husky": "^4.2.3",
+        "lint-staged": "^10.1.1",
+        "prettier": "^2.0.2",
         "shx": "^0.3.2",
-        "sinon": "^8.0.4",
+        "sinon": "^9.0.1",
         "typescript": "~3.4.5"
     },
     "husky": {
         "hooks": {
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
             "pre-commit": "lint-staged"
         }
     },
