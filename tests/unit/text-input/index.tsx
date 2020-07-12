@@ -1,13 +1,13 @@
 const { describe, it } = intern.getInterface("bdd");
 const { assert } = intern.getPlugin("chai");
 
-import harness from "@dojo/framework/testing/harness";
+import harness from "@dojo/framework/testing/harness/harness";
 import { tsx } from "@dojo/framework/core/vdom";
 import { stub } from "sinon";
 import TextInput from "../../../src/text-input";
-import * as c from "bootstrap-classes";
+import * as c from "@blocklang/bootstrap-classes";
 import * as css from "../../../src/text-input/index.m.css";
-import assertionTemplate from "@dojo/framework/testing/assertionTemplate";
+import assertionTemplate from "@dojo/framework/testing/harness/assertionTemplate";
 
 const baseAssertion = assertionTemplate(() => (
 	<input key="root" classes={[css.root, c.form_control]} value="" oninput={() => {}} />

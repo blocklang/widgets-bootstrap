@@ -1,6 +1,6 @@
 import { create, tsx } from "@dojo/framework/core/vdom";
 import * as css from "./index.m.css";
-import * as c from "bootstrap-classes";
+import * as c from "@blocklang/bootstrap-classes";
 
 export interface TextInputProperties {
 	value?: string;

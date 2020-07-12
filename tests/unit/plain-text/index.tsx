@@ -1,9 +1,9 @@
 const { describe, it } = intern.getInterface("bdd");
 
-import harness from "@dojo/framework/testing/harness";
+import harness from "@dojo/framework/testing/harness/harness";
 import { tsx } from "@dojo/framework/core/vdom";
 import PlainText from "../../../src/plain-text";
-import assertionTemplate from "@dojo/framework/testing/assertionTemplate";
+import assertionTemplate from "@dojo/framework/testing/harness/assertionTemplate";
 
 const baseAssertion = assertionTemplate(() => <virtual key="root"></virtual>);
 
